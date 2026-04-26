@@ -5,16 +5,16 @@ class Node():
         self.word = ""
         self.weight = 0
 
-    def setWord(self, word):
+    def set_word(self, word):
         self.word = word
 
-    def setWeight(self, weight):
+    def set_weight(self, weight):
         self.weight = weight
 
-    def getWord(self):
+    def get_word(self):
         return self.word
     
-    def getWeight(self):
+    def get_weight(self):
         return self.weight
     
     # Displayes raw data of called node and all those under it in DFS
@@ -29,20 +29,20 @@ class BinaryTree():
     def insert(self, tuple):
 
         # New node is formed from given tuple
-        newNode = Node()
-        newNode.setWord(tuple[0])
-        newNode.setWeight(tuple[1])
+        new_node = Node()
+        new_node.setWord(tuple[0])
+        new_node.setWeight(tuple[1])
         
         # New root is generated, old root becomes the left child of the new root, inserted node becomes the right child
-        newRoot = Node()
-        newRoot.setWeight(self.root.getWeight()+newNode.getWeight())
-        newRoot.left = self.root
-        newRoot.right = newNode
-        self.root = newRoot
+        new_root = Node()
+        new_root.setWeight(self.root.getWeight()+new_node.getWeight())
+        new_root.left = self.root
+        new_root.right = new_node
+        self.root = new_root
         print("PRINTING NODES AT INSERTION:         ", self.root)
 
     # Generate tree root and nodes
-    def startTree(self, tuple1, tuple2):
+    def start_tree(self, tuple1, tuple2):
 
         # Start with clean root node, weight is sum of child nodes
         self.root = Node()
