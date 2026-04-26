@@ -7,7 +7,7 @@ def huffman_algorithm(tuples):
 
     # Start tree with first 2 sorted tuples, and then remove those 2 tuples from list
     huffman_tree = BinaryTree()
-    huffman_tree.startTree(tuples_sorted[0],tuples_sorted[1])
+    huffman_tree.start_tree(tuples_sorted[0],tuples_sorted[1])
     tuples_sorted.remove(tuples_sorted[0])
     tuples_sorted.remove(tuples_sorted[0])
 

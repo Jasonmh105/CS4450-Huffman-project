@@ -1,4 +1,4 @@
-from Algorithm.huffman import huffmanAlgorithm
+from Algorithm.huffman import huffman_algorithm
 
 def gatherData():
     # Gather Input Data
@@ -17,7 +17,7 @@ def main():
     elements = gatherData()
     
     # Compute huffman algorithm
-    encoded_alphabet = huffmanAlgorithm(elements)
+    encoded_alphabet = huffman_algorithm(elements)
 
     # Display results
     print("PRINTING FINAL ENCODED ALPHABET:     ", encoded_alphabet)

@@ -28,18 +28,21 @@ class BinaryTree():
     # Handle new node in huffman tree
     def insert(self, tuple):
 
-        # New node is formed from given tuple
-        new_node = Node()
-        new_node.setWord(tuple[0])
-        new_node.setWeight(tuple[1])
-        
-        # New root is generated, old root becomes the left child of the new root, inserted node becomes the right child
-        new_root = Node()
-        new_root.setWeight(self.root.getWeight()+new_node.getWeight())
-        new_root.left = self.root
-        new_root.right = new_node
-        self.root = new_root
-        print("PRINTING NODES AT INSERTION:         ", self.root)
+        if(self.root is None):
+            raise TypeError("CANNOT INSERT BEFORE GENERATING A TREE, TRY USING start_tree() INSTEAD")
+        else:
+            # New node is formed from given tuple
+            new_node = Node()
+            new_node.set_word(tuple[0])
+            new_node.set_weight(tuple[1])
+            
+            # New root is generated, old root becomes the left child of the new root, inserted node becomes the right child
+            new_root = Node()
+            new_root.set_weight(self.root.get_weight()+new_node.get_weight())
+            new_root.left = self.root
+            new_root.right = new_node
+            self.root = new_root
+            print("PRINTING NODES AT INSERTION:         ", self.root)
 
     # Generate tree root and nodes
     def start_tree(self, tuple1, tuple2):
@@ -51,11 +54,11 @@ class BinaryTree():
         self.root.weight = tuple1[1]+tuple2[1]
 
         # Tuple1 becomes root's left child node
-        self.root.left.setWord(tuple1[0])
-        self.root.left.setWeight(tuple1[1])
+        self.root.left.set_word(tuple1[0])
+        self.root.left.set_weight(tuple1[1])
 
         # Tuple2 becomes root's left child node
-        self.root.right.setWord(tuple2[0])
-        self.root.right.setWeight(tuple2[1])
+        self.root.right.set_word(tuple2[0])
+        self.root.right.set_weight(tuple2[1])
 
         print("PRINTING NODES AT GENERATION:        ", self.root)
