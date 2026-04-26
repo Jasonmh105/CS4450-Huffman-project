@@ -65,3 +65,29 @@ class BinaryTree():
         self.root.right.set_weight(tuple2[1])
 
         print("PRINTING NODES AT GENERATION:        ", self.root)
+
+    def merge(self, tuple1, tuple2):
+        # Start with clean root node, weight is sum of child nodes
+        self.root = Node()
+        self.root.left = Node()
+        self.root.right = Node()
+        self.root.weight = tuple1[1]+tuple2[1]
+
+        # Conditional for if tuple1 is a tree or a word
+        if(type(tuple1[0]) == "string"):
+            # Tuple1 becomes root's left child node
+            self.root.left.set_word(tuple1[0])
+            self.root.left.set_weight(tuple1[1])
+        else:
+            self.root.left = tuple1[0]
+            self.root.left.set_weight(tuple1[1])
+
+
+        # Conditional for if tuple2 is a tree or a word
+        if(type(tuple2[0]) == "string"):
+            # Tuple2 becomes root's left child node
+            self.root.right.set_word(tuple2[0])
+            self.root.right.set_weight(tuple2[1])
+        else:
+            self.root.right = tuple2[0]
+            self.root.right.set_weight(tuple2[1])
