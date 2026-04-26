@@ -20,7 +20,7 @@ def main():
     encoded_alphabet = huffmanAlgorithm(elements)
 
     # Display results
-    print(encoded_alphabet)
+    print("PRINTING FINAL ENCODED ALPHABET:     ", encoded_alphabet)
 
 if __name__ == "__main__":
     main()
