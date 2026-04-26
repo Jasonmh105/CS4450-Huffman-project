@@ -3,8 +3,12 @@ class Node:
         self.left = None
         self.right = None
 
-class BinaryTree:
-    def debugPrint(self):
-        print("DEBUG: binaryTree")
+        self.word = None
+        self.weight = 0
 
-        testNode = Node()
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+        
+    def insert(tuple):
+        newNode = Node

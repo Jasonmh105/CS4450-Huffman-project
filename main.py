@@ -17,13 +17,10 @@ def main():
     elements = gatherData()
     
     # Compute huffman algorithm
-    # encoded_alphabet = huffmanAlgorithm(user_alphabet, freq_dis)
-
-    # Temp
-    codeWords = huffmanAlgorithm(elements)
+    encoded_alphabet = huffmanAlgorithm(elements)
 
     # Display results
-    print(codeWords)
+    print(encoded_alphabet)
 
 if __name__ == "__main__":
     main()
