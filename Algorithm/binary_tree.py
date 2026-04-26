@@ -25,6 +25,9 @@ class BinaryTree():
     def __init__(self):
         self.root = None
 
+    def get_root(self):
+        return self.root
+
     # Handle new node in huffman tree
     def insert(self, tuple):
 

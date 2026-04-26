@@ -13,7 +13,7 @@ def huffman_algorithm(tuples):
 
     # Generate the working set using current tree, and remaining sorted tuples
     # NOTE !!!!!!!!! this must be changed to insert tree into working set in proper sorted position, not always on left
-    working_set = [huffman_tree]
+    working_set = [(huffman_tree,huffman_tree.get_root().get_weight())]
     for i in range(0,len(tuples_sorted)):
         working_set.append(tuples_sorted[i])
 
