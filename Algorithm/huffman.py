@@ -1,6 +1,6 @@
 from Algorithm.binaryTree import BinaryTree
 
-def huffmanAlgorithm(alphabet, frequency):
+def huffmanAlgorithm(tuples):
     print("DEBUG: huffmanAlgorithm")
 
     test = BinaryTree()
