@@ -8,4 +8,9 @@ def huffmanAlgorithm(tuples):
     huffmanTree = BinaryTree()
     huffmanTree.startTree(tuplesSorted[0],tuplesSorted[1])
 
-    return tuplesSorted
+    workingSet = [huffmanTree]
+    for i in range(0,len(tuplesSorted)):
+        workingSet.append(tuplesSorted[i])
+    print(workingSet)
+
+    return
