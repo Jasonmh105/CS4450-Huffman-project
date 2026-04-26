@@ -9,6 +9,9 @@ def main():
     # Compute huffman algorithm
     # encoded_alphabet = huffmanAlgorithm(user_alphabet, freq_dis)
 
+    # Temp
+    huffmanAlgorithm(user_alphabet,freq_dis)
+
     # Display results
     for i in range(0, len(user_alphabet)):
         # when implemented, change to print(user_alphabet[i], freq_dis[i], encoded_alphabet[i])

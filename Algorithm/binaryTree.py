@@ -1,10 +1,10 @@
 class Node:
-    def debugPrint(self):
-        print("DEBUG: node")
+    def __init__(self):
+        self.left = None
+        self.right = None
 
 class BinaryTree:
     def debugPrint(self):
         print("DEBUG: binaryTree")
 
         testNode = Node()
-        testNode.debugPrint()
