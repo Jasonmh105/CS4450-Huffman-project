@@ -1,0 +1,25 @@
+from Algorithm.binary_tree import BinaryTree
+
+def huffman_algorithm(tuples):
+    
+    # Sort tuples by frequency
+    tuples_sorted = sorted(tuples, key=lambda element: element[1])
+
+    # Start tree with first 2 sorted tuples, and then remove those 2 tuples from list
+    huffman_tree = BinaryTree()
+    huffman_tree.start_tree(tuples_sorted[0],tuples_sorted[1])
+    tuples_sorted.remove(tuples_sorted[0])
+    tuples_sorted.remove(tuples_sorted[0])
+
+    # Generate the working set using current tree, and remaining sorted tuples
+    # NOTE !!!!!!!!! this must be changed to insert tree into working set in proper sorted position, not always on left
+    working_set = [huffman_tree]
+    for i in range(0,len(tuples_sorted)):
+        working_set.append(tuples_sorted[i])
+
+    # Add next tuple to huffman tree, then remove it from list of remaining tuples
+    huffman_tree.insert(working_set[1])
+    working_set.remove(working_set[1])
+
+    print("PRINTING WORKING SET:                ", working_set)
+    return
