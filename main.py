@@ -20,10 +20,10 @@ def main():
     # encoded_alphabet = huffmanAlgorithm(user_alphabet, freq_dis)
 
     # Temp
-    huffmanAlgorithm(elements)
+    codeWords = huffmanAlgorithm(elements)
 
     # Display results
-    print(elements)
+    print(codeWords)
 
 if __name__ == "__main__":
     main()

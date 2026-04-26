@@ -1,7 +1,8 @@
 from Algorithm.binaryTree import BinaryTree
 
 def huffmanAlgorithm(tuples):
-    print("DEBUG: huffmanAlgorithm")
+    
+    # Sort tuples by frequency
+    tuplesSorted = sorted(tuples, key=lambda element: element[1])
 
-    test = BinaryTree()
-    test.debugPrint()
+    return tuplesSorted
