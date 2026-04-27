@@ -19,7 +19,7 @@ def huffman_algorithm(tuples):
         # Remove the 2 nodes that have been merged together
         node_list.remove(node_list[0])
         node_list.remove(node_list[0])
-        # Resort node_list so that the new tree is in the proper place
+        # Re-sort node_list so that the new tree is in the proper place
         node_list.sort()
 
     # Will print only one node object if merges are successful
