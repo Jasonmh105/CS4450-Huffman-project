@@ -4,31 +4,27 @@ def huffman_algorithm(tuples):
     
     # Sort tuples by frequency
     tuples_sorted = sorted(tuples, key=lambda element: element[1])
+    print(tuples_sorted)
 
-    # Start tree with first 2 sorted tuples, and then remove those 2 tuples from list
+    # Start tree and convert each tuple to a tree node
     huffman_tree = BinaryTree()
-    huffman_tree.start_tree(tuples_sorted[0],tuples_sorted[1])
-    tuples_sorted.remove(tuples_sorted[0])
-    tuples_sorted.remove(tuples_sorted[0])
+    node_list = huffman_tree.tuples_to_nodes(tuples_sorted)
 
-    # Generate the working set using current tree, and remaining sorted tuples
-    working_set = [(huffman_tree,huffman_tree.root.get_weight())]
-    for i in range(0,len(tuples_sorted)):
-        working_set.append(tuples_sorted[i])
+    # print(huffman_tree.merge(node_list[0],node_list[1]), "\n\n\n")
+    # print(node_list, "\n\n\n")
 
-    # Resort list so that tree tuple is in proper position
-    working_set = sorted(working_set, key=lambda element: element[1])
+    print(huffman_tree.merge(node_list[0],node_list[1]), "\n")
+    node_list.append(huffman_tree.merge(node_list[0],node_list[1]))
+    node_list.remove(node_list[0])
+    node_list.remove(node_list[0])
+    # node_list.sort()
+    
 
-    # Add next tuple to huffman tree, then remove it from list of remaining tuples
-    # huffman_tree.insert(working_set[1])
-    # working_set.remove(working_set[1])
 
-    # Merge first 2 elements in working set
-    print("PRINTING WORKING SET:                ", working_set)
-    print("PRINTING MERGE:                      ", BinaryTree.merge(working_set[0],working_set[1]))
+    # while(len(node_list) > 2):
+    #     print(huffman_tree.merge(node_list[0],node_list[1]), "\n\n")
+    #     node_list.remove(node_list[0])
+    #     node_list.remove(node_list[0])
+    #     node_list.insert(0, huffman_tree.merge(node_list[0],node_list[1]))
 
-    # Resort list so that tree tuple is in proper position
-    working_set = sorted(working_set, key=lambda element: element[1])
-
-    print("PRINTING WORKING SET:                ", working_set)
     return
