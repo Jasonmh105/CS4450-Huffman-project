@@ -20,6 +20,12 @@ class Node():
     # Displayes raw data of called node and all those under it in DFS
     def __str__(self):
         return f'node({self.left}, {self.right}, {self.word}, {self.weight})'
+    
+    # operator overloading so that nodes can be compared
+    def __lt__(self, other):
+        return self.get_weight() < other.get_weight()
+    def __gt__(self, other):
+        return self.get_weight() > other.get_weight()
 
 class BinaryTree():
     def __init__(self):
