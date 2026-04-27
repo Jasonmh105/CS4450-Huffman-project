@@ -24,7 +24,8 @@ def huffman_algorithm(tuples):
     # working_set.remove(working_set[1])
 
     # Merge first 2 elements in working set
-    # BinaryTree.merge()
+    print("PRINTING WORKING SET:                ", working_set)
+    print("PRINTING MERGE:                      ", BinaryTree.merge(working_set[0],working_set[1]))
 
     # Resort list so that tree tuple is in proper position
     working_set = sorted(working_set, key=lambda element: element[1])
