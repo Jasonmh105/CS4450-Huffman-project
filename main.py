@@ -14,7 +14,7 @@ def gather_data():
 
 def main():
     
-    elements = gatherData()
+    elements = gather_data()
     
     # Compute huffman algorithm
     encoded_alphabet = huffman_algorithm(elements)
