@@ -20,7 +20,7 @@ def get_freq(string: str) -> int:
             # Frequency is valid
             return freq
         except ValueError:
-            print("Please enter a positive integer.")
+            print("Please enter an integer greater than zero.")
 
 
 def gather_data() -> list[tuple[str, int]]:
@@ -34,6 +34,11 @@ def gather_data() -> list[tuple[str, int]]:
 
         # User presses Enter (finishes)
         if not strings:
+            # Handle 1 string
+            if len(user_alphabet) < 2:
+                print("Program needs at least 2 strings to work.")
+                continue
+            # Finished successfully
             break
 
         for string in strings:
