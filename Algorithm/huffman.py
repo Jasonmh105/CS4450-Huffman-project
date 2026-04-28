@@ -68,7 +68,7 @@ def huffman_algorithm(tuples):
         node_list.sort()
 
     # Will print only one node object if merges are successful
-    print("\n\n", node_list)
+    # print("\n\n", node_list)
     print(node_list[0], "\n")
 
     return
