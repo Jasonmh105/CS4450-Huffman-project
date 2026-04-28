@@ -46,6 +46,16 @@ def merge(node1, node2):
 
         return new_root
 
+def pre_order_search(root, code_list, current_code):
+
+    # Leaf node is reached
+    if root.left is None and root.right is None:
+        code_list.append((root.word, root.get_weight(),current_code))
+        return
+        
+    pre_order_search(root.left, code_list, current_code + "0")
+    pre_order_search(root.right, code_list, current_code + "1")
+
 def huffman_algorithm(tuples):
     
     # Sort tuples by frequency
@@ -58,7 +68,7 @@ def huffman_algorithm(tuples):
     # Recursivly merge nodes until only one is left
     while(len(node_list) > 1):
         # Make new root node from first 2 in node_list, then remove merged nodes, reinsert new root, and sort
-        # print(huffman_tree.merge(node_list[0],node_list[1]), "\n")
+        # print(merge(node_list[0],node_list[1]), "\n")
         # Append to node_list, the root of merged first 2 nodes in list
         node_list.append(merge(node_list[0],node_list[1]))
         # Remove the 2 nodes that have been merged together
@@ -68,7 +78,17 @@ def huffman_algorithm(tuples):
         node_list.sort()
 
     # Will print only one node object if merges are successful
-    # print("\n\n", node_list)
-    print(node_list[0], "\n")
+    # print(node_list)
+    # print(node_list[0], "\n")
 
-    return
+    # Root node of final merged tree
+    final_tree = node_list[0]
+
+    # Array of 3-element tuples : (word, frequency, codeword)
+    code_list = []
+
+    # Pre order search that takes root of huffman tree and appends each (word, frequency, codeword) tuple to code_list
+    # Needs 3rd parameter to track current codeword while iterating
+    pre_order_search(final_tree, code_list, "")
+
+    return(code_list)
