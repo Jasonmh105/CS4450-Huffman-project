@@ -27,7 +27,7 @@ class Node():
     def __gt__(self, other):
         return self.get_weight() > other.get_weight()
 
-class BinaryTree():
+class binary_tree():
     def __init__(self):
         self.root = None
 

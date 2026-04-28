@@ -1,6 +1,6 @@
 from Algorithm.huffman import huffman_algorithm
 
-def gatherData():
+def gather_data():
     # Gather Input Data
     user_alphabet = ["this", "is", "an", "alphabet", "of", "strings"]
     freq_dis = [34, 6, 75, 2, 56, 18]
