@@ -27,6 +27,7 @@ class Node():
     def __gt__(self, other):
         return self.get_weight() > other.get_weight()
 
+# converts list of tuples into Node() objects
 def tuples_to_nodes(tuples):
 
         nodes = []
@@ -38,6 +39,7 @@ def tuples_to_nodes(tuples):
 
         return nodes
 
+# Takes 2 Node() objects, and makes them into a tree with a new root node, with a weight of the sum of the given children nodes
 def merge(node1, node2):
         new_root = Node()
         new_root.left = node1
@@ -46,6 +48,7 @@ def merge(node1, node2):
 
         return new_root
 
+# Takes root node of tree, and appends to code_list a 3-element tuple with the origional word, frequency, and codeword for each word
 def pre_order_search(root, code_list, current_code):
 
     # Leaf node is reached
@@ -56,6 +59,8 @@ def pre_order_search(root, code_list, current_code):
     pre_order_search(root.left, code_list, current_code + "0")
     pre_order_search(root.right, code_list, current_code + "1")
 
+# Takes list of 2-element tuples : (word, frequency), and processes the Huffman algorithm
+# Returns a list of 3-element tuples with the original word, frequency, and codeword
 def huffman_algorithm(tuples):
     
     # Sort tuples by frequency
@@ -68,7 +73,7 @@ def huffman_algorithm(tuples):
     # Recursivly merge nodes until only one is left
     while(len(node_list) > 1):
         # Make new root node from first 2 in node_list, then remove merged nodes, reinsert new root, and sort
-        # print(merge(node_list[0],node_list[1]), "\n")
+        print(merge(node_list[0],node_list[1]), "\n")
         # Append to node_list, the root of merged first 2 nodes in list
         node_list.append(merge(node_list[0],node_list[1]))
         # Remove the 2 nodes that have been merged together
