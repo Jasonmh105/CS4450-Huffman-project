@@ -73,7 +73,7 @@ def huffman_algorithm(tuples):
     # Recursivly merge nodes until only one is left
     while(len(node_list) > 1):
         # Make new root node from first 2 in node_list, then remove merged nodes, reinsert new root, and sort
-        print(merge(node_list[0],node_list[1]), "\n")
+        # print(merge(node_list[0],node_list[1]), "\n")
         # Append to node_list, the root of merged first 2 nodes in list
         node_list.append(merge(node_list[0],node_list[1]))
         # Remove the 2 nodes that have been merged together
