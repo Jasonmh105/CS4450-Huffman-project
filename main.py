@@ -1,16 +1,16 @@
 from Algorithm.huffman import huffman_algorithm
+from user_input import gather_data
 
-def gather_data():
-    # Gather Input Data
-    user_alphabet = ["this", "is", "an", "alphabet", "of", "strings"]
-    freq_dis = [34, 6, 75, 2, 56, 18]
+# Dummy data for testing purposes
+# def gather_data():
+#     # Gather Input Data
+#     user_alphabet = ["this", "is", "an", "alphabet", "of", "strings"]
+#     freq_dis = [34, 6, 75, 2, 56, 18]
 
-    # Combine lists using tuples (ensures association during sorting)
-    alpha_freq_list = []
-    for i in range(0,len(user_alphabet)):
-        alpha_freq_list.append((user_alphabet[i], freq_dis[i]))
+#     # Combine lists using tuples (ensures association during sorting)
+#     alpha_freq_list = zip(user_alphabet, freq_dis)
 
-    return alpha_freq_list
+#     return alpha_freq_list
 
 def main():
     
