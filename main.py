@@ -22,9 +22,6 @@ def main():
     # Compute huffman algorithm
     encoded_alphabet = huffman_algorithm(elements)
 
-    # Display results
-    print("PRINTING FINAL ENCODED ALPHABET:     ", encoded_alphabet)
-
     display_final_table(encoded_alphabet)
 
 
