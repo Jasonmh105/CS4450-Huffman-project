@@ -2,19 +2,7 @@ from Resources.huffman import huffman_algorithm
 from Resources.display import display_final_table, display_welcome_msg
 from Resources.user_input import gather_data
 
-# Dummy data for testing purposes
-# def gather_data():
-#     # Gather Input Data
-#     user_alphabet = ["this", "is", "an", "alphabet", "of", "strings"]
-#     freq_dis = [34, 6, 75, 2, 56, 18]
-
-#     # Combine lists using tuples (ensures association during sorting)
-#     alpha_freq_list = zip(user_alphabet, freq_dis)
-
-#     return alpha_freq_list
-
-
-def main():
+def encode_words() -> None:
     display_welcome_msg()
 
     elements = gather_data()
@@ -23,6 +11,10 @@ def main():
     encoded_alphabet = huffman_algorithm(elements)
 
     display_final_table(encoded_alphabet)
+
+
+def main():
+    encode_words()
 
 
 if __name__ == "__main__":

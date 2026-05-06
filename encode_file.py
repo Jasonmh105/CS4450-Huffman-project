@@ -5,7 +5,7 @@ from Resources.huffman import huffman_algorithm
 from Resources.display import display_final_table
 
 # Returns "GOODFILE" if file contains valid text, otherwise returns error code
-def check_for_file_content():
+def check_for_file_content() -> str:
 
     return_code = "GOODFILE"
 
@@ -30,7 +30,7 @@ def check_for_file_content():
     return(return_code)
 
 # Reads file given in commandline argument, and returns contents as str
-def get_target_file_content():
+def get_target_file_content() -> str:
 
     file_name = sys.argv[1]
     file = open(file_name, 'r')
@@ -40,7 +40,7 @@ def get_target_file_content():
     return(content)
 
 # Makes a new file with given name and content
-def new_file(name, content):
+def new_file(name: str, content: str) -> None:
 
     file_name = name
 
@@ -61,7 +61,7 @@ def translate_text(key_tuples, orig_text):
     return(translated_text)
 
 # Converts given input string into list of tuples of each component character, and their frequency in the text
-def count_chars(input_text):
+def count_chars(input_text: str) -> list[tuple[str,int]]:
 
     char_tuples = []
 
@@ -77,7 +77,7 @@ def count_chars(input_text):
     return(char_tuples)
 
 # Takes file name as terminal arguement, and generates a new file with encoded text, as well as prints the decoding table
-def encode_file():
+def encode_file() -> None:
 
     # verifies that file can be read, and contains encodable text
     file_validity = check_for_file_content()
@@ -111,8 +111,10 @@ def encode_file():
 
     return
 
+
 def main():
     encode_file()
+
 
 if __name__ == "__main__":
     main()
