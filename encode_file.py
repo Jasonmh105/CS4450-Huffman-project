@@ -11,8 +11,6 @@ def check_for_file_content():
 
     # Condition: only one argument given
     if (len(sys.argv) == 2):
-        
-        file_name = sys.argv[1]
 
         # Attempt to open and read file
         try:
