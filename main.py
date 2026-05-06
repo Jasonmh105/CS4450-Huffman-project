@@ -1,6 +1,6 @@
-from Algorithm.huffman import huffman_algorithm
-from display import display_final_table, display_welcome_msg
-from user_input import gather_data
+from Resources.huffman import huffman_algorithm
+from Resources.display import display_final_table, display_welcome_msg
+from Resources.user_input import gather_data
 
 # Dummy data for testing purposes
 # def gather_data():

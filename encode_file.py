@@ -1,8 +1,8 @@
 import sys
 from collections import Counter
 
-from Algorithm.huffman import huffman_algorithm
-from display import display_final_table
+from Resources.huffman import huffman_algorithm
+from Resources.display import display_final_table
 
 # Returns "GOODFILE" if file contains valid text, otherwise returns error code
 def check_for_file_content():
