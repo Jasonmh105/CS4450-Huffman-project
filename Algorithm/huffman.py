@@ -65,7 +65,7 @@ def huffman_algorithm(tuples):
     
     # Sort tuples by frequency
     tuples_sorted = sorted(tuples, key=lambda element: element[1])
-    print(tuples_sorted, "\n")
+    # print(tuples_sorted, "\n")
 
     # Convert each tuple to a tree node
     node_list = tuples_to_nodes(tuples_sorted)
