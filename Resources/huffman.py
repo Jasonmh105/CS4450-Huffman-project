@@ -28,7 +28,7 @@ class Node():
         return self.get_weight() > other.get_weight()
 
 # converts list of tuples into Node() objects
-def tuples_to_nodes(tuples):
+def tuples_to_nodes(tuples: list[tuple[str,int]]) -> list[Node]:
 
         nodes = []
         for each in tuples:
@@ -40,7 +40,7 @@ def tuples_to_nodes(tuples):
         return nodes
 
 # Takes 2 Node() objects, and makes them into a tree with a new root node, with a weight of the sum of the given children nodes
-def merge(node1, node2):
+def merge(node1: Node, node2: Node) -> Node:
         new_root = Node()
         new_root.left = node1
         new_root.right = node2
@@ -49,7 +49,7 @@ def merge(node1, node2):
         return new_root
 
 # Takes root node of tree, and appends to code_list a 3-element tuple with the origional word, frequency, and codeword for each word
-def pre_order_search(root, code_list, current_code):
+def pre_order_search(root: Node, code_list: list[tuple[str,int,str]], current_code: str) -> None:
 
     # Leaf node is reached
     if root.left is None and root.right is None:
@@ -61,10 +61,11 @@ def pre_order_search(root, code_list, current_code):
 
 # Takes list of 2-element tuples : (word, frequency), and processes the Huffman algorithm
 # Returns a list of 3-element tuples with the original word, frequency, and codeword
-def huffman_algorithm(tuples):
+def huffman_algorithm(tuples: list[tuple[str,int]]) -> list[tuple[str,int,str]]:
     
     # Sort tuples by frequency
     tuples_sorted = sorted(tuples, key=lambda element: element[1])
+
     # print(tuples_sorted, "\n")
 
     # Convert each tuple to a tree node
@@ -73,7 +74,9 @@ def huffman_algorithm(tuples):
     # Recursivly merge nodes until only one is left
     while(len(node_list) > 1):
         # Make new root node from first 2 in node_list, then remove merged nodes, reinsert new root, and sort
+
         # print(merge(node_list[0],node_list[1]), "\n")
+
         # Append to node_list, the root of merged first 2 nodes in list
         node_list.append(merge(node_list[0],node_list[1]))
         # Remove the 2 nodes that have been merged together
